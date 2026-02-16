@@ -31,7 +31,6 @@ const DeveloperProfilePage: React.FC = () => {
   return (
     <div className="bg-gray-900 text-white min-h-screen">
       <HeaderNavigation />
-
       <main className="container mx-auto px-4 py-8 max-w-6xl">
         {isLoading && (
           <div className="text-center py-12">
@@ -56,18 +55,17 @@ const DeveloperProfilePage: React.FC = () => {
 
         {developerData && (
           <>
-            <div className="flex flex-col md:flex-row gap-6 mb-8">
+            <div className="flex flex-col md:flex-row gap-6 mb-8">        
               <div className="w-full md:w-80 flex-shrink-0">
                 <DeveloperCard selectedYear={selectedYear} onYearChange={setSelectedYear} />
               </div>
               <div className="flex-1">
+                <NavigationTabs username={username || ''} />
                 <PopularRepositories />
                 <CommitVisualization />
                 <ProjectsShowcase />
               </div>
             </div>
-
-            <NavigationTabs username={username || ''} />
             <Outlet />
           </>
         )}

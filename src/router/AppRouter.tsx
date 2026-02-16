@@ -11,10 +11,10 @@ const AppRouter: React.FC = () => {
       <Routes>
         <Route path="/" element={<HomePage />} />
         <Route path="/profile/:username" element={<DeveloperProfilePage />}>
-          <Route path="/profile/:username/overview" element={<LoadingPage />} />
-          <Route path="/profile/:username/projects" element={<LoadingPage />} />
-          <Route path="/profile/:username/contributions" element={<LoadingPage />} />
-          <Route path="/profile/:username/skills" element={<LoadingPage />} />
+          <Route path="/profile/:username/overview" />
+          <Route path="/profile/:username/projects"  />
+          <Route path="/profile/:username/contributions" />
+          <Route path="/profile/:username/skills" />
         </Route>
       </Routes>
     </BrowserRouter>

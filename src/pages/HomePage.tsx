@@ -15,13 +15,6 @@ const HomePage: React.FC = () => {
 
   return (
     <div className="bg-gray-900 text-white min-h-screen">
-      {/* Header */}
-      <header className="bg-gray-800 border-b border-gray-700 py-6">
-        <div className="container mx-auto px-4 max-w-4xl">
-          <h1 className="text-4xl font-bold mb-2">DevProfile Viewer</h1>
-          <p className="text-gray-400">Explore developer profiles with beautiful visualizations</p>
-        </div>
-      </header>
 
       {/* Main Content */}
       <main className="container mx-auto px-4 py-12 max-w-4xl">

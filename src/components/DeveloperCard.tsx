@@ -20,7 +20,7 @@ const DeveloperCard: React.FC<DeveloperCardProps> = ({ selectedYear, onYearChang
           <img
             src={developerData.avatar_url}
             alt={developerData.name}
-            className="w-32 h-32 rounded-lg"
+            className="rounded-full border-2 border-gray-700"
           />
         </div>
 
