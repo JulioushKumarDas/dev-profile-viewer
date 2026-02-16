@@ -4,6 +4,7 @@ import { useDeveloper } from '../context/DeveloperContext';
 import HeaderNavigation from '../components/HeaderNavigation';
 import DeveloperCard from '../components/DeveloperCard';
 import NavigationTabs from '../components/NavigationTabs';
+import PopularRepositories from '../components/PopularRepositories';
 import CommitVisualization from '../components/CommitVisualization';
 import ProjectsShowcase from '../components/ProjectsShowcase';
 
@@ -60,6 +61,7 @@ const DeveloperProfilePage: React.FC = () => {
                 <DeveloperCard selectedYear={selectedYear} onYearChange={setSelectedYear} />
               </div>
               <div className="flex-1">
+                <PopularRepositories />
                 <CommitVisualization />
                 <ProjectsShowcase />
               </div>
