@@ -24,13 +24,23 @@ export const DeveloperProvider: React.FC<{ children: React.ReactNode }> = ({ chi
     setIsLoading(true);
     setErrorMsg(null);
     try {
-      const response = await fetch(`https://api.github.com/users/${username}`);
+      const controller = new AbortController();
+      const timeoutId = setTimeout(() => controller.abort(), 10000);
+
+      const response = await fetch(`https://api.github.com/users/${username}`, {
+        signal: controller.signal,
+        headers: { 'Accept': 'application/vnd.github.v3+json' }
+      });
+      clearTimeout(timeoutId);
+
       if (!response.ok) throw new Error('Developer not found');
       const data: DeveloperProfile = await response.json();
       setDeveloperData(data);
       setProjectsList(profileConfig.mockProjects);
     } catch (error) {
-      setErrorMsg(error instanceof Error ? error.message : 'Failed to fetch');
+      const errorMessage = error instanceof Error ? error.message : 'Failed to fetch developer profile';
+      setErrorMsg(errorMessage);
+      console.error('Profile fetch error:', error);
     } finally {
       setIsLoading(false);
     }

@@ -20,6 +20,13 @@ const DeveloperProfilePage: React.FC = () => {
     }
   }, [username, selectedYear, fetchDeveloperProfile, fetchCommitsByYear]);
 
+  const handleRetry = () => {
+    if (username) {
+      fetchDeveloperProfile(username);
+      fetchCommitsByYear(username, selectedYear);
+    }
+  };
+
   return (
     <div className="bg-gray-900 text-white min-h-screen">
       <HeaderNavigation />
@@ -27,13 +34,22 @@ const DeveloperProfilePage: React.FC = () => {
       <main className="container mx-auto px-4 py-8 max-w-6xl">
         {isLoading && (
           <div className="text-center py-12">
-            <p className="text-gray-400">Loading developer profile...</p>
+            <div className="inline-block">
+              <div className="w-12 h-12 border-4 border-gray-700 border-t-blue-500 rounded-full animate-spin mb-4"></div>
+            </div>
+            <p className="text-gray-400 text-lg">Loading developer profile for @{username}...</p>
           </div>
         )}
 
-        {errorMsg && (
-          <div className="bg-red-900 border border-red-700 rounded p-4 mb-6">
-            <p className="text-red-200">{errorMsg}</p>
+        {errorMsg && !developerData && (
+          <div className="bg-red-900 border border-red-700 rounded p-6 mb-6">
+            <p className="text-red-200 mb-4">⚠️ {errorMsg}</p>
+            <button
+              onClick={handleRetry}
+              className="bg-red-700 hover:bg-red-600 px-4 py-2 rounded transition-colors"
+            >
+              Retry
+            </button>
           </div>
         )}
 
