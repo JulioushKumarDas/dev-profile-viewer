@@ -55,9 +55,11 @@ const DeveloperProfilePage: React.FC = () => {
 
         {developerData && (
           <>
-            <div className="grid grid-cols-1 md:grid-cols-4 gap-6 mb-8">
-              <DeveloperCard selectedYear={selectedYear} onYearChange={setSelectedYear} />
-              <div className="md:col-span-3">
+            <div className="flex flex-col md:flex-row gap-6 mb-8">
+              <div className="w-full md:w-80 flex-shrink-0">
+                <DeveloperCard selectedYear={selectedYear} onYearChange={setSelectedYear} />
+              </div>
+              <div className="flex-1">
                 <CommitVisualization />
                 <ProjectsShowcase />
               </div>

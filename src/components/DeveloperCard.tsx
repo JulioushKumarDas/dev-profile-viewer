@@ -13,8 +13,8 @@ const DeveloperCard: React.FC<DeveloperCardProps> = ({ selectedYear, onYearChang
   if (!developerData) return null;
 
   return (
-    <aside className="w-full md:w-80 mb-6 md:mb-0">
-      <div className="bg-gray-800 rounded-lg p-6">
+    <aside className="w-full">
+      <div className="bg-gray-800 rounded-lg p-6 sticky top-20">
         {/* Avatar */}
         <div className="flex justify-center mb-4">
           <img
