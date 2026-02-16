@@ -56,24 +56,8 @@ const DeveloperProfilePage: React.FC = () => {
         {developerData && (
           <>
             <div className="grid grid-cols-1 md:grid-cols-4 gap-6 mb-8">
-              <DeveloperCard />
+              <DeveloperCard selectedYear={selectedYear} onYearChange={setSelectedYear} />
               <div className="md:col-span-3">
-                <div className="flex items-center gap-4 mb-6">
-                  <select
-                    value={selectedYear}
-                    onChange={(e) => setSelectedYear(parseInt(e.target.value))}
-                    className="bg-gray-800 text-white rounded px-3 py-2 border border-gray-700"
-                  >
-                    {Array.from({ length: 5 }, (_, i) => new Date().getFullYear() - i).map(
-                      (year) => (
-                        <option key={year} value={year}>
-                          {year}
-                        </option>
-                      )
-                    )}
-                  </select>
-                </div>
-
                 <CommitVisualization />
                 <ProjectsShowcase />
               </div>

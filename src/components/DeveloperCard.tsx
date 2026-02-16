@@ -2,7 +2,12 @@ import React from 'react';
 import { FiMapPin, FiMail, FiGlobe, FiTwitter, FiUsers } from 'react-icons/fi';
 import { useDeveloper } from '../context/DeveloperContext';
 
-const DeveloperCard: React.FC = () => {
+interface DeveloperCardProps {
+  selectedYear: number;
+  onYearChange: (year: number) => void;
+}
+
+const DeveloperCard: React.FC<DeveloperCardProps> = ({ selectedYear, onYearChange }) => {
   const { developerData } = useDeveloper();
 
   if (!developerData) return null;
@@ -27,6 +32,24 @@ const DeveloperCard: React.FC = () => {
         {developerData.bio && (
           <p className="text-gray-300 text-center mt-4 text-sm">{developerData.bio}</p>
         )}
+
+        {/* Year Selector */}
+        <div className="mt-6 pt-6 border-t border-gray-700">
+          <label className="block text-sm text-gray-400 mb-2">Select Year</label>
+          <select
+            value={selectedYear}
+            onChange={(e) => onYearChange(parseInt(e.target.value))}
+            className="w-full bg-gray-700 text-white rounded px-3 py-2 border border-gray-600"
+          >
+            {Array.from({ length: 5 }, (_, i) => new Date().getFullYear() - i).map(
+              (year) => (
+                <option key={year} value={year}>
+                  {year}
+                </option>
+              )
+            )}
+          </select>
+        </div>
 
         {/* Stats */}
         <div className="flex justify-around mt-6 pt-6 border-t border-gray-700">
