@@ -1,0 +1,82 @@
+{
+  "defaultUsername": "torvalds",
+  "navigationTabs": [
+    { "label": "Overview", "id": "overview" },
+    { "label": "Projects", "id": "projects", "count": 0 },
+    { "label": "Contributions", "id": "contributions" },
+    { "label": "Skills", "id": "skills" }
+  ],
+  "navbarMessages": {
+    "menuTooltip": "Menu",
+    "searchPlaceholder": "Search projects...",
+    "notificationsTooltip": "Notifications",
+    "profileTooltip": "Profile settings"
+  },
+  "profileSection": {
+    "followButton": "Follow",
+    "sponsorButton": "Sponsor",
+    "viewProfileText": "View full profile"
+  },
+  "contributionSection": {
+    "title": "Code Contributions",
+    "yearSelector": "Select Year",
+    "learnMore": "Learn about contributions"
+  },
+  "projectsSection": {
+    "title": "Popular Projects",
+    "empty": "No projects found"
+  },
+  "featureDescriptions": {
+    "menuFeature": "Opens navigation sidebar with bookmarks and settings",
+    "searchFeature": "Search through projects and repositories (Press / to focus)",
+    "prsFeature": "View pull requests across your organizations",
+    "issuesFeature": "Track and manage issues assigned to you",
+    "createFeature": "Create new repository or project",
+    "notificationsFeature": "View your notifications and activity",
+    "profileFeature": "Access account settings and preferences"
+  },
+  "loaderMessages": [
+    "Loading amazing projects...",
+    "Compiling brilliant code...",
+    "Analyzing contributions...",
+    "Fetching project details...",
+    "Processing development history..."
+  ],
+  "mockProjects": [
+    {
+      "id": 1,
+      "name": "BuildCore",
+      "url": "#",
+      "description": "High-performance build system for modern applications",
+      "language": "Rust",
+      "stars": 1200
+    },
+    {
+      "id": 2,
+      "name": "WebMatrix",
+      "url": "#",
+      "description": "Full-stack web framework with real-time capabilities",
+      "language": "TypeScript",
+      "stars": 3500
+    },
+    {
+      "id": 3,
+      "name": "DataVault",
+      "url": "#",
+      "description": "Distributed data processing engine",
+      "language": "Python",
+      "stars": 2800
+    }
+  ],
+  "activityData": {
+    "thisYear": 1247,
+    "lastYear": 983,
+    "privateContributions": 342,
+    "breakdown": {
+      "commits": 45,
+      "pullRequests": 23,
+      "codeReview": 18,
+      "issues": 14
+    }
+  }
+}
