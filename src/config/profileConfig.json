@@ -1,5 +1,6 @@
 {
   "defaultUsername": "torvalds",
+  "demoMode": true,
   "navigationTabs": [
     { "label": "Overview", "id": "overview" },
     { "label": "Projects", "id": "projects", "count": 0 },
@@ -42,6 +43,50 @@
     "Fetching project details...",
     "Processing development history..."
   ],
+  "demoProfiles": {
+    "torvalds": {
+      "login": "torvalds",
+      "name": "Linus Torvalds",
+      "avatar_url": "https://avatars.githubusercontent.com/u/1?v=4",
+      "bio": "I'm just this guy, you know?",
+      "location": "Portland, OR",
+      "email": "torvalds@linux-foundation.org",
+      "blog": "https://www.kernel.org",
+      "twitter_username": "linus__torvalds",
+      "company": "Linux Foundation",
+      "public_repos": 42,
+      "followers": 180000,
+      "following": 10
+    },
+    "gvanrossum": {
+      "login": "gvanrossum",
+      "name": "Guido van Rossum",
+      "avatar_url": "https://avatars.githubusercontent.com/u/6524?v=4",
+      "bio": "Python creator",
+      "location": "USA",
+      "email": "guido@python.org",
+      "blog": "https://www.python.org",
+      "twitter_username": "gvanrossum",
+      "company": "Python Software Foundation",
+      "public_repos": 89,
+      "followers": 50000,
+      "following": 20
+    },
+    "octocat": {
+      "login": "octocat",
+      "name": "The Octocat",
+      "avatar_url": "https://avatars.githubusercontent.com/u/1?v=4",
+      "bio": "GitHub's mascot",
+      "location": "San Francisco, CA",
+      "email": "octocat@github.com",
+      "blog": "https://github.com",
+      "twitter_username": "octocat",
+      "company": "GitHub",
+      "public_repos": 2,
+      "followers": 4000,
+      "following": 9
+    }
+  },
   "mockProjects": [
     {
       "id": 1,
